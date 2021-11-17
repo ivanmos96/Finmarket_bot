@@ -26,7 +26,7 @@ def send_keyboard(message, text="Хочешь узнать о новостях �
     itembtn1 = types.KeyboardButton('Главные новости (новость + ссылка)') # создадим кнопку
     itembtn2 = types.KeyboardButton('Самое читаемое (новость + ссылка)')
     itembtn3 = types.KeyboardButton('Самое обсуждаемое (новость + ссылка)')
-    itembtn4 = types.KeyboardButton("Поиск недавних новостей по запросу (новости за прошедший год)")
+    itembtn4 = types.KeyboardButton("Поиск новостей по запросу (за прошедший год)")
     itembtn5 = types.KeyboardButton('Другое')
     itembtn6 = types.KeyboardButton('Пока все!')
     keyboard.add(itembtn1, itembtn2) # добавим кнопки 1 и 2 на первый ряд
@@ -129,6 +129,9 @@ def callback_worker(call):
             send_keyboard(call, "Чем еще могу помочь?")
 
     elif call.text == "Другое":
+        photo = open('1.gif', 'rb')
+        tb.send_photo(chat_id, photo)
+        tb.send_photo(chat_id, "FILEID")
         bot.send_message(call.chat.id, 'Больше я пока ничего не умею :-(')
         send_keyboard(call, "Чем еще могу помочь?")
 
