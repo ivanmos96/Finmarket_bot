@@ -130,8 +130,8 @@ def callback_worker(call):
 
     elif call.text == "Другое":
         photo = open('1.gif', 'rb')
-        tb.send_photo(chat_id, photo)
-        tb.send_photo(chat_id, "FILEID")
+        tb.send_photo(call.chat_id, photo)
+        tb.send_photo(call.chat_id, "FILEID")
         bot.send_message(call.chat.id, 'Больше я пока ничего не умею :-(')
         send_keyboard(call, "Чем еще могу помочь?")
 
