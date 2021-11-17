@@ -19,16 +19,14 @@ try:
 except:
     pass
 
-#start
-# напишем, что делать нашему боту при команде старт
 # напишем, что делать нашему боту при команде старт
 @bot.message_handler(commands=['start'])
-def send_keyboard(message, text="Привет, чем я могу тебе помочь?"):
+def send_keyboard(message, text="Хочешь узнать о новостях с главной страницы Финмаркета?"):
     keyboard = types.ReplyKeyboardMarkup(row_width=2)  # наша клавиатура
-    itembtn1 = types.KeyboardButton('Добавить дело в список') # создадим кнопку
-    itembtn2 = types.KeyboardButton('Показать список дел')
-    itembtn3 = types.KeyboardButton('Удалить дело из списка')
-    itembtn4 = types.KeyboardButton("Удалить все дела из списка")
+    itembtn1 = types.KeyboardButton('Главные новости (новость + ссылка)') # создадим кнопку
+    itembtn2 = types.KeyboardButton('Самое читаемое (новость + ссылка)')
+    itembtn3 = types.KeyboardButton('Самое обсуждаемое (новость + ссылка)')
+    itembtn4 = types.KeyboardButton("Поиск недавних новостей по запросу (новости за прошедший год)")
     itembtn5 = types.KeyboardButton('Другое')
     itembtn6 = types.KeyboardButton('Пока все!')
     keyboard.add(itembtn1, itembtn2) # добавим кнопки 1 и 2 на первый ряд
