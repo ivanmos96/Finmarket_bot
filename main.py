@@ -14,7 +14,7 @@ from time import sleep
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
 # подключим токен
-bot = telebot.TeleBot("2136961612:AAE-ybGpO5uVyj2nUlr7Fqy8plgUs7LFnzU")
+bot = telebot.TeleBot(" ")
 
 # напишем, что делать нашему боту при команде старт
 @bot.message_handler(commands=['start'])
